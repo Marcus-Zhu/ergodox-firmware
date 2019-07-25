@@ -4,7 +4,7 @@
  * Copyright (c) 2012 Ben Blazak <benblazak.dev@gmail.com>
  * Released under The MIT License (MIT) (see "license.md")
  * Project located at <https://github.com/benblazak/ergodox-firmware>
- * ------------------------------------------------------------------------- */
+------------------------------------------------- */
 
 
 #include <stdint.h>
@@ -29,19 +29,41 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
       _tab,     _Q,         _W,      _E,      _R,    _T,
     _grave,     _A,         _S,      _D,      _F,    _G,
    _shiftL,     _Z,         _X,      _C,      _V,    _B,
-    _ctrlL,  _guiL, _backslash,  _print,   _altL,
-                                                      1,     3,
+         1,      3, _backslash, _arrowL,  _arrowR,
+                                                 _ctrlL, _altL,
                                                          _home,
                                             _bs,   _del,  _end,
 // right hand
            _6,      _7,      _8,      _9,         _0,     _dash,
-           _Y,      _U,      _I,      _O,         _P, _bracketL,
+           _Y,      _U,      _I,      _O,         _P,    _equal,
            _H,      _J,      _K,      _L, _semicolon,    _quote,
            _N,      _M,  _comma, _period,     _slash,   _shiftR,
-               _arrowL, _arrowD, _arrowU,    _arrowR,    _ctrlR,
- _altR,  _altL,
+               _arrowU, _arrowD,_bracketL, _bracketR,     _guiL,
+ _altR,  _ctrlR,
 _pageU,
 _pageD, _enter, _space ),
+
+/**     KB_MATRIX_LAYER(  // layout: layer 0: default */
+/** // unused */
+/** 0, */
+/** // left hand */
+/**       _esc,     _1,         _2,      _3,      _4,    _5, */
+/**       _tab,     _Q,         _W,      _E,      _R,    _T, */
+/**     _grave,     _A,         _S,      _D,      _F,    _G, */
+/**    _shiftL,     _Z,         _X,      _C,      _V,    _B, */
+/**     _ctrlL,  _guiL, _backslash,  _print,   _altL, */
+/**                                                       1,     3, */
+/**                                                          _home, */
+/**                                             _bs,   _del,  _end, */
+/** // right hand */
+/**            _6,      _7,      _8,      _9,         _0,     _dash, */
+/**            _Y,      _U,      _I,      _O,         _P, _bracketL, */
+/**            _H,      _J,      _K,      _L, _semicolon,    _quote, */
+/**            _N,      _M,  _comma, _period,     _slash,   _shiftR, */
+/**                _arrowL, _arrowD, _arrowU,    _arrowR,    _ctrlR, */
+/**  _altR,  _altL, */
+/** _pageU, */
+/** _pageD, _enter, _space ), */
 
 
 	KB_MATRIX_LAYER(  // layout: layer 1: function and symbol keys
@@ -168,8 +190,8 @@ NULL,
  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
  s2kcap, kprrel, kprrel, kprrel, kprrel, kprrel,
- kprrel, kprrel, kprrel, kprrel, kprrel,
-                                                 lpush1,slpunum,
+ lpush1,slpunum, kprrel, kprrel, kprrel,
+                                                 kprrel, kprrel,
                                                          kprrel,
                                          kprrel, kprrel, kprrel,
 // right hand
@@ -182,6 +204,27 @@ NULL,
  kprrel,
  kprrel, kprrel, kprrel ),
 
+/**     KB_MATRIX_LAYER(  // press: layer 0: default */
+/** // unused */
+/** NULL, */
+/** // left hand */
+/**  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**  s2kcap, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**  kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**                                                  lpush1,slpunum, */
+/**                                                          kprrel, */
+/**                                          kprrel, kprrel, kprrel, */
+/** // right hand */
+/**                  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**                  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**                  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**                  kprrel, kprrel, kprrel, kprrel, kprrel, s2kcap, */
+/**                          kprrel, kprrel, kprrel, kprrel, kprrel, */
+/**  kprrel, kprrel, */
+/**  kprrel, */
+/**  kprrel, kprrel, kprrel ), */
 
 	KB_MATRIX_LAYER(  // press: layer 1: function and symbol keys
 // unused
@@ -237,8 +280,8 @@ NULL,
  ktrans, ktrans, kprrel, ktrans, ktrans, ktrans,
  ktrans, kprrel, kprrel, kprrel, ktrans, ktrans,
  ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
- ktrans, ktrans, ktrans, ktrans, ktrans,
-                                                 ktrans,slponum,
+ ktrans, slponum, ktrans, ktrans, ktrans,
+                                                 ktrans, ktrans,
                                                          ktrans,
                                          ktrans, ktrans, ktrans,
 // right hand
@@ -266,8 +309,8 @@ NULL,
  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
  s2kcap, kprrel, kprrel, kprrel, kprrel, kprrel,
- kprrel, kprrel, kprrel, kprrel, kprrel,
-                                                  lpop1, kprrel,
+ lpop1, kprrel, kprrel, kprrel, kprrel,
+                                                  kprrel, kprrel,
                                                          kprrel,
                                          kprrel, kprrel, kprrel,
 // right hand
@@ -289,8 +332,8 @@ NULL,
  ktrans,sshprre,sshprre, kprrel, kprrel, kprrel,
  ktrans, kprrel, kprrel, kprrel, kprrel,sshprre,
  ktrans, kprrel, kprrel, kprrel, kprrel,sshprre,
- ktrans, ktrans, ktrans, ktrans, ktrans,
-                                                 ktrans,   NULL,
+ ktrans, NULL, ktrans, ktrans, ktrans,
+                                                 ktrans, ktrans,
                                                          ktrans,
                                          ktrans, ktrans, ktrans,
 // right hand
@@ -335,8 +378,8 @@ NULL,
  ktrans, ktrans, kprrel, ktrans, ktrans, ktrans,
  ktrans, kprrel, kprrel, kprrel, ktrans, ktrans,
  ktrans, ktrans, ktrans, ktrans, ktrans, ktrans,
- ktrans, kprrel, ktrans, ktrans, ktrans,
-                                                slponum, ktrans,
+ slponum, ktrans, ktrans, ktrans, ktrans,
+                                                ktrans, kprrel,
                                                          ktrans,
                                          ktrans, ktrans, ktrans,
 // right hand
